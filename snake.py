@@ -18,6 +18,8 @@ class Snake:
   def create_snake(self):
     for _ in range(0, 3):  
       self.add_body()
+  
+  
 
   def add_body(self):
     loc = -0
@@ -36,7 +38,7 @@ class Snake:
       self.snakes[obj_loc].goto(x = prev_x, y = prev_y)
     self.snakes[0].forward(CONSTANT_SPEED)
 
-
+ #Key bind control
   def up(self):
     if(self.head.heading() != DOWN):
       self.snakes[0].setheading(UP)
@@ -49,3 +51,12 @@ class Snake:
   def right(self):
     if(self.head.heading()  != LEFT):
       self.snakes[0].setheading(RIGHT)
+
+  def get_length(self):
+    return len(self.snakes)
+
+  def cut_snake(self):
+    for i in range(3, self.get_length()):
+      if(self.head.xcor() == self.snakes[i].xcor() and self.head.ycor() == self.snakes[i].ycor()):
+        
+        exit()
