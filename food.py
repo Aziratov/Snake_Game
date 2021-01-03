@@ -19,3 +19,5 @@ class Food(Turtle):
     rand_x = randNum()
     rand_y = randNum()
     self.goto(rand_x, rand_y)
+
+    

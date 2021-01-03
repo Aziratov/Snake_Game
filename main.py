@@ -38,6 +38,7 @@ while game_running:
   #Collision with each window
   if(snake.head.xcor() > 280):
     snake.head.goto(x = -280, y = snake.head.ycor())
+
   if(snake.head.xcor() < -280):
     snake.head.goto(x = 280, y = snake.head.ycor())
 
@@ -50,9 +51,8 @@ while game_running:
   #Self collision, game over using slicing
   for obj in snake.snakes[1:]:
     if (snake.head.distance(obj) < 10):
-      game_running = False
-      score.game_over()
-
+      score.reset()
+      snake.reset()
 
 
 

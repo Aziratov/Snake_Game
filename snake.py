@@ -55,8 +55,9 @@ class Snake:
   def get_length(self):
     return len(self.snakes)
 
-  def cut_snake(self):
-    for i in range(3, self.get_length()):
-      if(self.head.xcor() == self.snakes[i].xcor() and self.head.ycor() == self.snakes[i].ycor()):
-        
-        exit()
+  def reset(self):
+    for snake in self.snakes:
+      snake.goto(10000,10000)
+    self.snakes.clear()
+    self.create_snake()
+    self.head = self.snakes[0]
