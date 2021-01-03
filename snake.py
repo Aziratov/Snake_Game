@@ -15,17 +15,19 @@ class Snake:
     self.create_snake()
     self.head = self.snakes[0]
 
-
   def create_snake(self):
-    loc = -0
     for _ in range(0, 3):  
-      obj = Turtle()
-      obj.shape("square")
-      obj.color("white")
-      obj.penup()
-      obj.goto(x = loc, y = 0)
-      loc -= 20
-      self.snakes.append(obj)
+      self.add_body()
+
+  def add_body(self):
+    loc = -0
+    obj = Turtle()
+    obj.shape("square")
+    obj.color("white")
+    obj.penup()
+    obj.goto(x = loc, y = 0)
+    loc -= 20
+    self.snakes.append(obj)
 
   def move(self):
     for obj_loc in range(len(self.snakes) - 1, 0, -1):
